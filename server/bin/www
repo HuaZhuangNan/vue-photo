@@ -1,0 +1,52 @@
+const http = require('http');
+
+const app = require('../src/app');
+
+// set environment [设置环境]
+process.env.PORT = normalizePort(process.env.PORT) || 80;
+process.env.NODE_ENV = normalizeEnv(process.env.NODE_ENV) || 'production';
+
+// set port
+const port = process.env.PORT;
+
+// create a app server [创建一个服务]
+app.set('port', port);
+const server = http.createServer(app);
+server.listen(port);
+
+// err event [出现错误事件]
+server.on('error', (error) => {
+  // listening err处理
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+  // TODO 更多错误处理
+  console.error(error);
+  process.exit(1);
+});
+
+// listening event [服务开始监听运作时的事件]
+server.on('listening', ()=>{
+  let addr = server.address().address;
+  addr = addr !== '::'? addr: '127.0.0.1';
+  console.log('app start ', `${addr}:${port}`)
+});
+
+// normalize port [检测port设置]
+function normalizePort(params){
+  if(params===undefined) return false;
+  const port = parseInt(params, 10);
+  if(isNaN(port) || port<1 || port>65535){
+    console.error(`${params} port err, please set the correct port`)
+    process.exit(1);
+  }else return port;
+};
+// normalize NodeEnv [检测Node环境设置]
+function normalizeEnv(params){
+  if(params===undefined) return false;
+  if(params!=='development' && params!=='production'){
+    console.error(`${params} err, please set 'development' or 'production'`)
+    process.exit(1);
+  }
+  return params
+};

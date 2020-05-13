@@ -1,0 +1,56 @@
+@charset 'utf-8';
+
+@import './var';
+
+// elementUI
+/* 引入主题 */
+@import "~element-ui/packages/theme-chalk/src/index";
+/* 滚动条 el-scrollbar */
+.el-scrollbar {
+  height:100%;
+  width: 100%;
+}
+.scrollbar-wrapper {
+  overflow-x: hidden;
+}
+
+// 生成 class: .t-dark 字体颜色 .bg-dark 背景颜色 .bo-dark 边框颜色
+@each $name , $color in $colors {
+  .t-#{$name} {color: $color;}
+  .bg-#{$name} {background-color: $color;}
+  .bo-#{$name} {border: 1px solid $color;}
+}
+/* 公用样式 */
+// 图标
+.svg-icon {
+  & path[pid='0'], path[pid='1'] {
+    fill: $--color-primary;
+  }
+}
+html,body{
+  height: 100% ;
+  width: 100%;
+}
+html {
+  font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+  font-size: 100px;
+}
+body {
+  font-size: 16%;
+}
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+}
+input,button {
+  outline: none;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  cursor: pointer;
+}
+@media (max-width: 768px){
+  body {
+    font-size: 14%;
+  }
+}

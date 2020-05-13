@@ -1,0 +1,19 @@
+{
+  "restartable": "rs",
+  "ignore": [
+    ".git",
+    ".vscode",
+    "node_modules/**/node_modules"
+  ],
+  "delay": 200,
+  "verbose": true,
+  "watch": [
+    "bin",
+    "src"
+  ],
+  "env": {
+    "PORT": 3000,
+    "NODE_ENV": "development"
+  },
+  "ext": "js,json"
+}

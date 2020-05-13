@@ -1,0 +1,47 @@
+{
+  "type": "English",
+  "config": {
+    "title": "System",
+    "copy": "All Reserved"
+  },
+  "route": {
+    "home": "Home",
+    "login": "Sign In",
+    "register": "Sign Up",
+    "404": "Not Found",
+    "403": "Not Permission",
+    "close": "Web Close"
+  },
+  "messages": {
+    "primary": "Primary",
+    "success": "Success",
+    "warning": "Warning",
+    "error": "Error",
+    "lang-select": "Switch"
+  },
+  "login": {
+    "user": "Name",
+    "user-tip": "Please input 5-20 name",
+    "pass": "Password",
+    "pass-tip": "Please input 5-20 password",
+    "code": "Code",
+    "code-tip": "Please input code",
+    "code-refresh": "Click image refresh",
+    "rem": " Remember",
+    "rem-tip": "No login for three days after opening",
+    "sum-btn": "Sign In"
+  },
+  "request": {
+    "ok": "OK",
+    "err": "Error",
+    "redirect": "Redirect",
+    "bad-request": "Bad Request",
+    "unauthorized": "Unauthorized",
+    "not-found": "Not Found",
+    "internal-server-error": "Internal Server Error",
+    "service-unavailable": "Service Unavailable"
+  },
+  "err": {
+    "go": "Back"
+  }
+}

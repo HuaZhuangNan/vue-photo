@@ -1,0 +1,16 @@
+$colors: (
+  dark:#2d3436,
+  light:#ffffff,
+  deep: #ced6e0,
+  primary:#409EFF,
+  success:#67C23A,
+  warn:  #E6A23C,
+  danger:#F56C6C,
+);
+//  elementUi
+/* 改变主题色变量 */
+$--color-primary: map-get($colors, 'primary');
+/*  */
+$background-color-base: map-get($colors, 'light');
+/* 改变 icon 字体路径变量，必需 */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';

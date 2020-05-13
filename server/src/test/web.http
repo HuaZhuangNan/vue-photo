@@ -1,0 +1,45 @@
+@baseUrl = http://127.0.0.1:3000/api
+@contentType = application/json
+@time = {{$timestamp }}000
+
+@code = test
+
+# @name appInfo
+
+GET  {{baseUrl}}/web/app?t={{time}} HTTP/1.1
+
+###
+
+# @name code-img
+
+GET {{baseUrl}}/auth/code-img?t={{time}} HTTP/1.1
+
+###
+
+# @name login
+
+POST  {{baseUrl}}/auth/login?t={{time}} HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+  "user":"admin",
+  "pass":"admin",
+  "code": "{{code}}"
+}
+
+
+###
+
+# @name register
+
+POST  {{baseUrl}}/auth/register?t={{time}} HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+  "user":"admin",
+  "email": "admin@test.com",
+  "pass":"admin"
+}
+
+
+###

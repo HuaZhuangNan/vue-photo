@@ -1,0 +1,47 @@
+{
+  "type": "简体中文",
+  "config": {
+    "title": "系统",
+    "copy": "版权所有"
+  },
+  "route": {
+    "home": "首页",
+    "login": "登录",
+    "register": "注册",
+    "404": "页面未找到",
+    "403": "页面无权限",
+    "close": "站点关闭"
+  },
+  "messages": {
+    "primary": "信息",
+    "success": "成功",
+    "warning": "警告",
+    "error": "错误",
+    "lang-select": "切换"
+  },
+  "login": {
+    "user": "昵称",
+    "user-tip": "请输入5-20位昵称",
+    "pass": "密码",
+    "pass-tip": "请输入5-20位密码",
+    "code": "验证码",
+    "code-tip": "请输入验证码",
+    "code-refresh": "点击图片刷新",
+    "rem": "记住我",
+    "rem-tip": "开启后三天免登录",
+    "sum-btn": "立即登录"
+  },
+  "request": {
+    "ok": "成功",
+    "err": "错误",
+    "redirect": "重定向",
+    "bad-request": "错误请求",
+    "unauthorized": "没有权限",
+    "not-found": "没有找到",
+    "internal-server-error": "服务器出错",
+    "service-unavailable": "暂停服务"
+  },
+  "err": {
+    "go": "返回"
+  }
+}
