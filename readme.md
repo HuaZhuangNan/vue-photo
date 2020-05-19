@@ -1,5 +1,9 @@
 # vue-photo
 
+## 后台首页
+
+![dashboard](./screenshots/dashboard.png)
+
 ## 完成进度
 
 - [*] 国际化

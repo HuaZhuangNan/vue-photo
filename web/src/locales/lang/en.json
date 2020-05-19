@@ -31,6 +31,10 @@
     "rem-tip": "No login for three days after opening",
     "sum-btn": "Sign In"
   },
+  "userDown": {
+    "userInfo": "User Info",
+    "logout": "Logout"
+  },
   "request": {
     "ok": "OK",
     "err": "Error",

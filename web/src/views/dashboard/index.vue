@@ -9,8 +9,8 @@
   </el-card>
 </el-col>
 </el-row>
-<el-row>
-  <el-col :xs="24" :sm="12" class="count-item">
+<el-row v-if="appStatisic">
+  <el-col :xs="24" :sm="24" class="count-item">
     <el-card class="box-card statistics-container" shadow="hover">
       <div slot="header" class="clearfix">
         <h3>登录历史</h3>
@@ -20,30 +20,12 @@
       <div class="statistics-item"><span>127.0.0.1</span> <span>2020年5月11日20:57:45</span></div>
     </el-card>
   </el-col>
-  <el-col :xs="24" :sm="12">
+  <el-col :xs="24" :sm="24">
     <el-card class="box-card" shadow="hover">
       <div slot="header" class="clearfix">
         <h3>图片访问统计</h3>
       </div>
-    </el-card>
-  </el-col>
-</el-row>
-<el-row v-if="appStatisic">
-  <el-col :xs="24" :sm="12" class="count-item">
-    <el-card class="box-card statistics-container" shadow="hover">
-      <div slot="header" class="clearfix">
-        <h3>{{appStatisic.img_count}}</h3>
-      </div>
-      <div class="statistics-item"><span>127.0.0.1</span> <span>2020年5月11日20:57:45</span></div>
-      <div class="statistics-item"><span>127.0.0.1</span> <span>2020年5月11日20:57:45</span></div>
-      <div class="statistics-item"><span>127.0.0.1</span> <span>2020年5月11日20:57:45</span></div>
-    </el-card>
-  </el-col>
-  <el-col :xs="24" :sm="12">
-    <el-card class="box-card" shadow="hover">
-      <div slot="header" class="clearfix">
-        <h3>图片访问统计</h3>
-      </div>
+      <v-echart :options="testBar" :autoresize="true"> </v-echart>
     </el-card>
   </el-col>
 </el-row>
@@ -51,20 +33,54 @@
 </template>
 
 <script>
-import { GetStatistic } from '@/api/app';
+import 'echarts/lib/chart/bar';
 
 export default {
   name: 'Dashboard',
   computed: {
     appStatisic() {
-      const data = GetStatistic()
-        .then(res => res.data);
-      console.log(data);
-      return data;
+      return [];
     },
   },
   data() {
     return {
+      testBar: {
+        color: ['#3398DB'],
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: { // 坐标轴指示器，坐标轴触发有效
+            type: 'shadow', // 默认为直线，可选为：'line' | 'shadow'
+          },
+        },
+        grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '3%',
+          containLabel: true,
+        },
+        xAxis: [
+          {
+            type: 'category',
+            data: [1, 2, 3, 4, 5, 6, 7],
+            axisTick: {
+              alignWithLabel: true,
+            },
+          },
+        ],
+        yAxis: [
+          {
+            type: 'value',
+          },
+        ],
+        series: [
+          {
+            name: '直接访问',
+            type: 'bar',
+            barWidth: '60%',
+            data: [10, 52, 200, 334, 390, 330, 220],
+          },
+        ],
+      },
       counts: [
         {
           name: '登录次数',
@@ -98,7 +114,6 @@ export default {
 @import '~@/scss/var.scss';
 
 .disabled-container {
-  height: 1800px;
   width: 100%;
   .f-left {
     float: left;
@@ -127,6 +142,10 @@ export default {
   }
   .statistics-container {
     padding: 5px 0;
+  }
+  .echarts {
+    width: 100%;
+    margin: 0 auto;
   }
   .statistics-item {
     line-height: 0.3rem;

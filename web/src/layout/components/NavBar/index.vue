@@ -6,6 +6,7 @@
   </div>
   <div class="nav-right">
     <LangSelect />
+    <UserDown />
   </div>
 </nav>
 </template>
@@ -13,12 +14,14 @@
 <script>
 import Breadcrumb from '@/components/Breadcrumb';
 import LangSelect from '@/components/LangSelect';
+import UserDown from '@/components/UserDown';
 
 export default {
   name: 'NavBar',
   components: {
-    LangSelect,
     Breadcrumb,
+    LangSelect,
+    UserDown,
   },
   computed: {
     sidebar() {
@@ -61,6 +64,7 @@ $height: 55px;
   }
   .nav-right {
     height: $height;
+    padding-right: 10px;
   }
 }
 </style>

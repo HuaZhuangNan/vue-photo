@@ -17,6 +17,7 @@ const getters = {
   // 用户
   user: state => state.user.state,
   id: state => state.user.id,
+  avatar: state => state.user.avatar,
   ip: state => state.user.ip,
   username: state => state.user.username,
   role: state => state.user.role,

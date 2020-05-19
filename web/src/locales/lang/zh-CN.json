@@ -31,6 +31,13 @@
     "rem-tip": "开启后三天免登录",
     "sum-btn": "立即登录"
   },
+  "userDown": {
+    "userInfo": "用户信息",
+    "logout": "退出登录"
+  },
+  "routes": {
+
+  },
   "request": {
     "ok": "成功",
     "err": "错误",

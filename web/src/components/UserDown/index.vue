@@ -1,7 +1,7 @@
 <template>
 <el-dropdown  @command="handleCommand">
   <div class="el-dropaown-link">
-    <img :src="photoUrl" class="photo-url">
+    <img :src="avatar" class="avatar">
     <i class="el-icon-arrow-down el-icon--right" />
   </div>
   <el-dropdown-menu slot="dropdown">
@@ -19,8 +19,8 @@
 export default {
   name: 'UserDown',
   computed: {
-    photoUrl() {
-      return this.$store.getters.photoUrl;
+    avatar() {
+      return `${process.env.VUE_APP_BASE_URL}/${this.$store.getters.avatar}`;
     },
   },
   methods: {
@@ -42,12 +42,13 @@ export default {
 </script>
 
 <style lang="scss">
-  .photo-url{
+  .avatar{
     float: left;
-    width: 50px;
-    height: auto;
+    width: 30px;
+    margin-top: 10px;
+    height: 30px;
     cursor: pointer;
-    background: #666;
+    background: rgba(0,21,41,.08);
     border-radius: 50%;
     &:hover {
       box-shadow: 0 1px 4px rgba(0,21,41,.08);

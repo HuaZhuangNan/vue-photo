@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import ElementUI from 'element-ui';
+import ECharts from 'vue-echarts';
 import App from './App';
 import router from './router';
 import store from './store';
@@ -19,6 +20,9 @@ Vue.use(ElementUI, {
   // size
   i18n: (key, value) => i18n.t(key, value), // 导入i18n挂载
 });// elementUI
+// echarts
+Vue.component('v-echart', ECharts);
+
 
 new Vue({
   router,

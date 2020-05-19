@@ -4,7 +4,7 @@ const schema = new mongoose.Schema({
   email: { type: String, unique: true }, // 邮件
   username: { type: String, unique: true }, // 名字
   password: { type: String }, // 密码
-  avatar: { type: String, default: '/static/login.png' }, // 头像
+  avatar: { type: String, default: '/static/logo.png' }, // 头像
   theme: { type: String, default: 'default' }, // 主题
   role: { type: String, default: 'user' }, // 角色
   ip: { type: Array }, // ip 地址数组
